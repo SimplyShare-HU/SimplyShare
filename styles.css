@@ -1,0 +1,887 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+/* Header */
+.site-header {
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Login Section */
+.login-section {
+  text-align: right;
+  padding: 10px;
+  background-color: #ecf0f1
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  background-color: #2980b9;
+}
+
+.tabs button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabs button:hover {
+  background-color: #1abc9c;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  padding: 20px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.active-tab {
+  display: block;
+}
+
+/* Post List - Posts Style */
+#post-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* 📝 Post Card Style */
+.post-card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.post-card p {
+  font-size: 14px;
+  color: #7f8c8d;
+  text-align: center;
+}
+
+/* Buttons inside posts */
+.post-card button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #34495e;
+}
+
+.post-item button:hover {
+  opacity: 0.9;
+}
+
+/* Edit Button Specific Style */
+.post-item button.edit {
+  background-color: #f1c40f;
+  color: black;
+}
+
+.post-item button.edit:hover {
+  background-color: #d4ac0d;
+}
+
+/* Delete Button Specific Style */
+.post-item button.delete {
+  background-color: #e74c3c;
+}
+
+.post-item button.delete:hover {
+  background-color: #c0392b;
+}
+
+.post-item button:hover {
+  opacity: 0.9;
+}
+
+/* Edit Button Specific Style */
+.post-item button.edit {
+  background-color: #f1c40f;
+}
+
+.post-item button.edit:hover {
+  background-color: #d4ac0d;
+}
+
+/* Delete Button Specific Style */
+.post-item button.delete {
+  background-color: #e74c3c;
+}
+
+.post-item button.delete:hover {
+  background-color: #c0392b;
+}
+
+.post-item button:hover {
+  background-color: #c0392b;
+}
+
+/* Share Form - Centered & Clean */
+#shareForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+#shareForm input,
+#shareForm textarea,
+#shareForm select {
+  width: 60%;
+  max-width: 500px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#shareForm button {
+  padding: 10px 20px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#shareForm button:hover {
+  background-color: #2ecc71;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  position: relative;
+  width: 100%;
+  margin-top: auto;
+}
+
+.site-footer a {
+  color: #1abc9c;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+.filter-container {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#categoryFilter {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+/* Buttons */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button i {
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #4a90e2;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Edit and Delete Buttons */
+button.edit {
+  background-color: #f1c40f;
+  color: white;
+}
+
+button.delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Hover Effects */
+button.edit:hover {
+  background-color: #f39c12;
+}
+
+button.delete:hover {
+  background-color: #c0392b;
+}
+@media screen and (max-width: 600px) {
+  .filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .post-item {
+    width: 100%;
+  }
+}
+/* Resize Post Item Cards */
+.post-item {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: transform 0.2s, box-shadow 0.3s;
+  cursor: pointer;
+  width: calc(30% - 20px);  /* Smaller width */
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+  min-height: 200px;  /* Consistent height */
+}
+
+
+/* Hover Effect for Card */
+.post-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+/* Navbar Styles (Fixed Horizontal Alignment) */
+.navbar {
+  background-color: #4a90e2;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar .nav-links button {
+  background: none;
+  border: none;
+  color: white;
+  margin-left: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links button:hover {
+  color: #f1c40f;
+}
+
+/* Smooth Tab Transition */
+.tab-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tab-content.active-tab {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Light Gray Background for Dark Mode */
+body.dark-mode {
+  background-color: #2a2a2a !important;  /* Light gray background */
+  color: #f5f5f5;
+}
+
+/* Dark Mode for Post Cards */
+body.dark-mode .post-item {
+  background-color: #3b3b3b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode for Navbar */
+body.dark-mode .navbar {
+  background-color: #333;
+}
+
+/* Dark Mode Filter Background */
+body.dark-mode .filter-container {
+  background-color: #3b3b3b;
+}
+
+/* Dark Mode for Buttons */
+body.dark-mode button {
+  background-color: #444;
+  color: white;
+}
+
+/* Dark Mode Footer */
+body.dark-mode .site-footer {
+  background-color: #333;
+}
+
+/* Dark Mode for the Post List Container */
+body.dark-mode #post-list {
+  background-color: #2a2a2a;  /* Matches body background */
+}
+/* Full Background Fix for Dark Mode */
+body.dark-mode {
+  background-color: #2a2a2a !important;  /* Light gray for overall background */
+  color: #f5f5f5;
+}
+/* 🔳 Fix White Stripe Behind Login Section */
+body.dark-mode .login-section {
+  background-color: #2a2a2a;  /* Match overall background */
+  padding: 10px;
+  border-radius: 12px;
+}
+
+/* 🔍 Fix Post Details Modal */
+body.dark-mode .modal-content {
+  background-color: #3b3b3b;  /* Dark background for post details */
+  color: #f5f5f5;  /* Light text */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 🌟 Fix Post Titles for Better Visibility */
+body.dark-mode h3 {
+  color: #ffffff;  /* Post titles will be white in dark mode */
+}
+
+/* 🌑 Fix Close Button in Post Details Modal */
+body.dark-mode .close-button {
+  color: #f5f5f5;
+}
+
+/* 🌙 Hover Effect for Post Titles */
+body.dark-mode h3:hover {
+  color: #f1c40f;  /* Yellow tint on hover for better interaction */
+}
+
+
+/* Fix for Tabs (Home, Share, Recent Posts) */
+body.dark-mode .tab-content {
+  background-color: #2a2a2a;  /* Same as body background */
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Fix for Share Form */
+body.dark-mode #shareForm {
+  background-color: #3b3b3b;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Fix for Inputs and Text Areas */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: #444;
+  color: white;
+  border: 1px solid #555;
+}
+
+/* Home Section Background */
+body.dark-mode #home {
+  background-color: #2a2a2a;  /* Match background */
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Recent Posts Background */
+body.dark-mode #recent-posts {
+  background-color: #2a2a2a;
+}
+
+/* Fix for the area around the cards */
+body.dark-mode #post-list {
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 12px;
+}
+/* 🌑 Fix All Section Headings in Dark Mode */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #ffffff;  /* Set all headings to white */
+}
+
+/* 🌑 Fix Post Titles in Post Details Modal */
+body.dark-mode .modal-content h2 {
+  color: #ffffff;  /* Set post detail titles to white */
+}
+
+/* 🌑 Fix Labels and Small Text in Forms */
+body.dark-mode label,
+body.dark-mode p {
+  color: #f5f5f5;  /* Set paragraph text and labels to light gray */
+}
+
+/* 🌑 Fix Links (Remove Default Blue Color) */
+body.dark-mode a {
+  color: #f1c40f;  /* Use yellow links for better contrast */
+  text-decoration: none;
+}
+
+body.dark-mode a:hover {
+  color: #f39c12;  /* Darker yellow on hover */
+  text-decoration: underline;
+}
+
+/* 🌑 Fix Input Placeholder Text */
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #cccccc;  /* Light gray placeholder text */
+}
+
+}
+/* Custom Footer */
+.site-footer {
+  background-color: #4a90e2;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 12px 12px 0 0;
+}
+
+.site-footer a {
+  color: #f1c40f;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+/* Marketplace Listing Card */
+#marketplace-list .post-item {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: calc(33% - 20px);
+  display: inline-block;
+  vertical-align: top;
+}
+
+#marketplaceForm input,
+#marketplaceForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Dark mode fixes for new tabs */
+body.dark-mode #admissions,
+body.dark-mode #marketplace {
+  background-color: #2a2a2a;
+  color: #f5f5f5;
+}
+
+body.dark-mode #marketplace-list .post-item {
+  background-color: #3b3b3b;
+}
+
+/* ✅ Marketplace Listings - Flexible Layout */
+#marketplace-list {
+  display: flex;
+  flex-wrap: wrap;  /* Allows wrapping to the next line */
+  gap: 20px;  /* Consistent gap between cards */
+  padding: 20px;
+  justify-content: center;  /* Center align items */
+}
+
+/* 🛍️ Product Card Style - Auto-fit */
+.product-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 300px;  /* Fixed width for consistency */
+  height: 400px;  /* Fixed height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* 🖱️ Buttons inside marketplace listings */
+.product-card button {
+  margin-top: 5px;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #34495e;
+}
+
+.product-card button.edit {
+  background-color: #f1c40f;
+}
+
+.product-card button.delete {
+  background-color: #e74c3c;
+}
+
+/* 📱 Responsive Fix for Smaller Screens */
+@media screen and (max-width: 1024px) {
+  .product-card {
+    width: 45%;  /* Two cards per row on tablets */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product-card {
+    width: 100%;  /* Full width on mobile */
+  }
+}
+
+
+/* ✅ Hidden Form (Dropdown) */
+.hidden-form {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Smooth transition for dropdown */
+.show-form {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+/* 🔥 Slide down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✅ Dropdown Button Styles */
+.dropdown-button {
+  padding: 10px 20px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-button:hover {
+  background-color: #357ab8;
+}
+/* ✅ Centered and Neat Marketplace Form */
+#marketplaceForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  margin: 0 auto;  /* Center the form */
+  width: 50%;  /* Limit the form width */
+  max-width: 600px;  /* Prevent form from becoming too wide */
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Form Fields Styling */
+#marketplaceForm input,
+#marketplaceForm textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Submit Button Styling */
+#marketplaceForm button {
+  padding: 10px 20px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#marketplaceForm button:hover {
+  background-color: #2ecc71;
+}
+
+/* 🎉 Hero Banner Styles */
+.hero-banner {
+  background: linear-gradient(135deg, #4a90e2, #357ab8);
+  color: white;
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.hero-banner h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-banner p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  padding: 12px 25px;
+  background-color: #1abc9c;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #16a085;
+}
+
+/* 🔥 Features Section */
+.features {
+  text-align: center;
+  padding: 20px;
+}
+
+.features h2 {
+  margin-bottom: 20px;
+}
+
+.feature-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.feature-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-card i {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #4a90e2;
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+/* 💬 Testimonials Section */
+.testimonials {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 30px;
+}
+
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.testimonial-card {
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card p {
+  font-style: italic;
+}
+
+.testimonial-card span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: right;
+}
+/* 🌙 Dark Mode for Hero Banner */
+body.dark-mode .hero-banner {
+  background: linear-gradient(135deg, #2a2a2a, #1f1f1f);
+  color: #f5f5f5;
+}
+
+/* 🌙 Dark Mode for Features Section */
+body.dark-mode .feature-card {
+  background-color: #3b3b3b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: #f5f5f5;
+}
+
+body.dark-mode .feature-card i {
+  color: #1abc9c;  /* Icon color in dark mode */
+}
+
+body.dark-mode .feature-card:hover {
+  background-color: #444;
+}
+
+/* 🌙 Dark Mode for Testimonials Section */
+body.dark-mode .testimonials {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode .testimonial-card {
+  background-color: #3b3b3b;
+  color: #f5f5f5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .testimonial-card p {
+  color: #cccccc;  /* Slightly lighter text */
+}
+
+body.dark-mode .testimonial-card span {
+  color: #f1c40f;  /* Highlight user names */
+}
+
+/* 🌙 Dark Mode for CTA Button */
+body.dark-mode .cta-button {
+  background-color: #1abc9c;
+  color: white;
+}
+
+body.dark-mode .cta-button:hover {
+  background-color: #16a085;
+}

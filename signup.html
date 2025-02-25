@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup - SimplyShare</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Add Firebase SDKs -->
+<!-- Firebase App (the core Firebase SDK) -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+
+<!-- Firebase Authentication -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+
+<!-- Firebase Firestore -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+
+<script>
+  // Initialize Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyBYEICMLfbQFyA3m_DcPbOQcIkwjPhSF7w",
+    authDomain: "simplyshare-27620.firebaseapp.com",
+    projectId: "simplyshare-27620",
+    storageBucket: "simplyshare-27620.firebasestorage.app",
+    messagingSenderId: "757732600530",
+    appId: "1:757732600530:web:56a2ecc34076b9119e1b0b",
+    measurementId: "G-S0F6MH1TXX"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+</head>
+<body>
+  <header class="site-header">
+    <h1>Signup - SimplyShare</h1>
+  </header>
+
+  <section class="tab-content active-tab">
+    <form id="signupForm" class="signup-form">
+      <h2>Create an Account</h2>
+      <input type="email" id="signupEmail" placeholder="Email" required />
+      <input type="password" id="signupPassword" placeholder="Password" required />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+      <button type="submit">Sign Up</button>
+      <p id="signupError" class="error-message"></p>
+    </form>
+  </section>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("signupEmail").value.trim();
+      const password = document.getElementById("signupPassword").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+      const errorDisplay = document.getElementById("signupError");
+
+      if (password !== confirmPassword) {
+        errorDisplay.textContent = "Passwords do not match.";
+        return;
+      }
+
+      try {
+        await auth.createUserWithEmailAndPassword(email, password);
+        alert("Account created successfully! Redirecting to login page.");
+        window.location.href = "index.html";
+      } catch (error) {
+        errorDisplay.textContent = "Signup failed: " + error.message;
+      }
+    });
+  </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const signupForm = document.getElementById("signupForm");
+
+  signupForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById("signupEmail").value;
+    const password = document.getElementById("signupPassword").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    const errorDisplay = document.getElementById("signupError");
+
+    if (password !== confirmPassword) {
+      errorDisplay.textContent = "Passwords do not match.";
+      return;
+    }
+
+    try {
+      await firebase.auth().createUserWithEmailAndPassword(email, password);
+      alert("Account created successfully! Redirecting to login page.");
+      window.location.href = "index.html";
+    } catch (error) {
+      errorDisplay.textContent = "Signup failed: " + error.message;
+    }
+  });
+});
+</script>
+</body>
+</html>

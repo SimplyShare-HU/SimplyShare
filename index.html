@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimplyShare</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Add Firebase SDKs -->
+  <!-- Firebase App (the core Firebase SDK) -->
+<!-- Firebase App (Core) -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+
+<!-- Firebase Authentication -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+
+<!-- Firebase Firestore -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+
+<!-- Firebase Storage -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-storage-compat.js"></script>
+
+<script>
+  // Initialize Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyBYEICMLfbQFyA3m_DcPbOQcIkwjPhSF7w",
+    authDomain: "simplyshare-27620.firebaseapp.com",
+    projectId: "simplyshare-27620",
+    storageBucket: "simplyshare-27620.firebasestorage.app",
+    messagingSenderId: "757732600530",
+    appId: "1:757732600530:web:56a2ecc34076b9119e1b0b",
+    measurementId: "G-S0F6MH1TXX"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <h1>SimplyShare</h1>
+    <p>Connecting students through sharing and collaboration</p>
+  </header>
+
+  <!-- Login Section -->
+  <div class="login-section">
+    <span id="usernameDisplay">Not logged in</span>
+    <button id="loginButton"><i class="fas fa-sign-in-alt"></i> Login</button>
+<button id="signupButton"><i class="fas fa-user-plus"></i> Sign Up</button>
+<button id="logoutButton" style="display: none;"><i class="fas fa-sign-out-alt"></i> Logout</button>
+
+  </div>
+
+  <!-- Sticky Navbar -->
+<nav class="navbar">
+  <div class="logo">SimplyShare</div>
+  <div class="nav-links">
+    <button onclick="showTab('home')"><i class="fas fa-home"></i> Home</button>
+    <button onclick="showTab('share')"><i class="fas fa-share-alt"></i> Share</button>
+    <button onclick="showTab('recent-posts')"><i class="fas fa-clock"></i> Recent Posts</button>
+	<button onclick="showTab('marketplace')"><i class="fas fa-store"></i> Marketplace</button>
+	<button onclick="showTab('admissions')"><i class="fas fa-info-circle"></i> Admissions Info</button>
+	
+
+  </div>
+  <button id="themeToggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+
+</nav>
+
+
+  <!-- Home Tab -->
+<section id="home" class="tab-content active-tab">
+  <div class="hero-banner">
+    <h1>Welcome to SimplyShare! 🎓</h1>
+    <p>Empowering students to connect, share skills, and grow together.</p>
+    <button onclick="showTab('share')" class="cta-button">Get Started <i class="fas fa-arrow-right"></i></button>
+  </div>
+
+  <div class="features">
+    <h2>🌟 What You Can Do</h2>
+    <div class="feature-cards">
+      <div class="feature-card">
+        <i class="fas fa-hands-helping"></i>
+        <h3>Share Skills</h3>
+        <p>Help others by offering your skills and knowledge.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-search"></i>
+        <h3>Find Help</h3>
+        <p>Seek assistance from fellow students on various subjects.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-store"></i>
+        <h3>Marketplace</h3>
+        <p>List and find great deals on books, supplies, and more!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonials">
+    <h2>💬 What Our Users Say</h2>
+    <div class="testimonial-card">
+      <p>"SimplyShare helped me find a study partner for my final exams. A game-changer!"</p>
+      <span>- Alex, Computer Science Major</span>
+    </div>
+    <div class="testimonial-card">
+      <p>"I listed my old textbooks in the marketplace and sold them within days!"</p>
+      <span>- Mia, Business Student</span>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Share Tab -->
+  <section id="share" class="tab-content">
+    <h2 class="share-heading">Share Something</h2>
+    <form id="shareForm">
+      <input type="text" id="title" placeholder="Title" required />
+      <textarea id="description" placeholder="Description" required></textarea>
+      <input type="text" id="authorName" placeholder="Your Name" required />
+      <select id="category" required>
+        <option value="Skill Offering">Skill Offering</option>
+        <option value="Skill Seeking">Skill Seeking</option>
+        <option value="Study Help Offered">Study Help Offered</option>
+        <option value="Study Help Needed">Study Help Needed</option>
+        <option value="Promotions & Discounts">Promotions & Discounts</option>
+        <option value="Events">Events</option>
+        <option value="Other">Other</option>
+      </select>
+      <input type="email" id="contactEmail" placeholder="Your Email (Visible in post)" required />
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Recent Posts Tab -->
+<section id="recent-posts" class="tab-content">
+  <h2>Recent Posts</h2>
+
+  <!-- Filter Dropdown Above Posts -->
+  <div class="filter-container">
+    <label for="categoryFilter">Filter by Category:</label>
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+      <option value="Skill Offering">Skill Offering</option>
+      <option value="Skill Seeking">Skill Seeking</option>
+      <option value="Study Help Offered">Study Help Offered</option>
+      <option value="Study Help Needed">Study Help Needed</option>
+      <option value="Promotions & Discounts">Promotions & Discounts</option>
+      <option value="Events">Events</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <!-- Post List -->
+  <div id="post-list"></div>
+</section>
+<!-- Admissions Info Tab -->
+<section id="admissions" class="tab-content">
+  <h2>Admissions Information</h2>
+  <p><strong>Useful information for first-year students:</strong></p>
+  
+  <h3>Scholarships</h3>
+  <ul>
+    <li><strong>NL Scholarship:</strong> €5,000 for non-EEA students starting their first year in the Netherlands. <a href="#">Check eligibility</a></li>
+    <li><strong>HU Talent Scholarship:</strong> Available for non-EEA students from their second year onward. <a href="#">Check eligibility</a></li>
+    <li>Other scholarships available through <a href="https://www.grantfinder.nl/">GrantFinder</a> or <a href="https://www.scholarshipportal.com/">ScholarshipPortal</a></li>
+  </ul>
+
+  <h3>Tuition Fees</h3>
+  <p>Students from EU/EEA countries usually pay the legal tuition fee. Use the <a href="https://www.internationalhu.com/tuition-fee-calculator">tuition fee calculator</a> to estimate costs.</p>
+
+  <h3>Application Deadlines</h3>
+  <ul>
+    <li><strong>1 May:</strong> Dutch residents without visa requirements</li>
+    <li><strong>31 May:</strong> Non-EU students outside the Netherlands requiring a visa</li>
+    <li><strong>1 August:</strong> EU/EEA students or those transferring from another Dutch institution</li>
+  </ul>
+
+  <h3>Required Documents</h3>
+  <ul>
+    <li>Passport</li>
+    <li>Residence permit (if applicable)</li>
+    <li>School diploma and grade lists (with certified translations if required)</li>
+    <li>Proof of language proficiency</li>
+  </ul>
+
+  <h3>Financial Proof for Non-EU Students</h3>
+  <p>Bank statements and financial documents must be submitted, ensuring sufficient funds for tuition and living expenses.</p>
+
+  <h3>Book List</h3>
+  <p>Books should be purchased before September 1st from the following site: <a href="https://www.studiebijdehand.nl">StudyBijDeHand</a></p>
+</section>
+<!-- Marketplace Tab -->
+<section id="marketplace" class="tab-content">
+  <h2>Marketplace</h2>
+
+  <!-- ✅ Dropdown Toggle Button -->
+  <button id="toggleMarketplaceForm" class="dropdown-button">
+    <i class="fas fa-plus-circle"></i> List a Product
+  </button>
+
+  <!-- ✅ Hidden Form (Dropdown) -->
+  <div id="marketplaceFormContainer" class="hidden-form">
+    <form id="marketplaceForm">
+      <input type="text" id="productName" placeholder="Product Name" required />
+      <textarea id="productDescription" placeholder="Product Description" required></textarea>
+      <input type="number" id="productPrice" placeholder="Price (€)" required />
+      <input type="text" id="productContact" placeholder="Contact Details (e.g., email)" required />
+      <input type="file" id="productImage" accept="image/*" required />
+      <button type="submit">List Product</button>
+    </form>
+  </div>
+
+  <h3>Listed Products</h3>
+  <div id="marketplace-list"></div>
+</section>
+
+
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2024 SimplyShare. All rights reserved.</p>
+    <p>Contact us: <a href="mailto:support@simplyshare.com">support@simplyshare.com</a> | Phone: +1 234 567 890</p>
+    <p>Follow us on:
+      <a href="#">Facebook</a> |
+      <a href="#">Twitter</a> |
+      <a href="#">Instagram</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

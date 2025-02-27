@@ -1036,4 +1036,13 @@ body.dark-mode .cta-button:hover {
     background: rgba(255, 255, 255, 0.2);
   }
 }
+/* Fix Dark Mode Button Size */
+@media screen and (max-width: 768px) {
+  #themeToggle {
+    font-size: 18px;
+    padding: 8px;
+    width: auto;
+    height: auto;
+  }
+}
 

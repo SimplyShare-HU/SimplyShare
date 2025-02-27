@@ -70,8 +70,7 @@ const storage = firebase.storage(); // ✅ This will now work correctly
 
 
 
-
-  document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.createElement("button");
   menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
   menuToggle.classList.add("menu-toggle");
@@ -84,7 +83,15 @@ const storage = firebase.storage(); // ✅ This will now work correctly
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("show");
   });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (event) => {
+    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+      navLinks.classList.remove("show");
+    }
+  });
 });
+
 
 
 

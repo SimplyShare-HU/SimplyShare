@@ -71,19 +71,21 @@ const storage = firebase.storage(); // ✅ This will now work correctly
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.createElement("button");
-  menuToggle.textContent = "☰ Menu";
-  menuToggle.classList.add("menu-toggle");
-
-  const navbar = document.querySelector(".navbar");
-  navbar.insertBefore(menuToggle, navbar.firstChild);
-
+  const menuToggle = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
 
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("show");
   });
+
+  // Close menu when clicking outside (optional)
+  document.addEventListener("click", (event) => {
+    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+      navLinks.classList.remove("show");
+    }
+  });
 });
+
 
 
 

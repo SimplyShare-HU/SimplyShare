@@ -1045,4 +1045,53 @@ body.dark-mode .cta-button:hover {
     height: auto;
   }
 }
+/* === Responsive Navbar with Dropdown for Mobile === */
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #333;
+    text-align: center;
+    z-index: 100;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+  }
+
+  .nav-links button i {
+    margin-right: 8px;
+  }
+
+  .nav-links button:hover {
+    background: #444;
+  }
+
+  /* Resize Dark Mode Button for Mobile */
+  .theme-toggle {
+    font-size: 20px;
+    padding: 8px;
+  }
+}
 

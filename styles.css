@@ -891,30 +891,34 @@ body.dark-mode .cta-button:hover {
 
 
 
-/* Responsive Design Fixes */
+/* Mobile Navigation Improvements */
 @media screen and (max-width: 768px) {
-  /* Fix Navigation */
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-  }
-
   .nav-links {
-    display: none;
+    display: flex;
     flex-direction: column;
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links button {
-    width: 100%;
-    padding: 12px;
-    text-align: left;
+    position: absolute;
+    top: 60px;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #4a90e2;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
   }
 
   .nav-links.show {
-    display: flex;
+    right: 0;
+  }
+
+  .nav-links button {
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+    font-size: 18px;
+    padding: 15px 20px;
+    width: 100%;
   }
 
   .menu-toggle {
@@ -922,33 +926,10 @@ body.dark-mode .cta-button:hover {
     background: none;
     border: none;
     color: white;
-    font-size: 20px;
-    padding: 10px;
-  }
-
-  /* Make buttons larger for touch */
-  button {
-    width: 100%;
-    font-size: 16px;
-    padding: 12px;
-  }
-
-  /* Ensure post items stack properly */
-  .post-item {
-    width: 100%;
-    min-height: auto;
-  }
-
-  /* Make form inputs responsive */
-  #shareForm input,
-  #shareForm textarea,
-  #shareForm select {
-    width: 100%;
-  }
-
-  /* Adjust the hero banner */
-  .hero-banner {
-    padding: 20px;
-    font-size: 16px;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
   }
 }

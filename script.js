@@ -67,10 +67,10 @@ const storage = firebase.storage(); // ✅ This will now work correctly
 
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
+  const themeToggle = document.getElementById("themeToggle"); // Dark mode button
 
   if (!menuToggle || !navLinks) return; // Prevents errors if elements are missing
 
@@ -78,13 +78,21 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.classList.toggle("show"); // Toggle menu visibility
   });
 
-  // Optional: Close menu when clicking outside
+  // Ensure clicking outside the menu closes it
   document.addEventListener("click", (event) => {
     if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
       navLinks.classList.remove("show");
     }
   });
+
+  // Dark Mode Toggle (Existing Feature)
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+  }
 });
+
 
 
 

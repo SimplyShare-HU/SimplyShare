@@ -303,10 +303,70 @@ button.delete:hover {
   background-color: #c0392b;
 }
 @media screen and (max-width: 600px) {
+  /* Fix for Sticky Navbar */
+  .navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 50px; /* Reduced navbar height */
+    padding: 10px; /* Reduce padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .nav-links button {
+    font-size: 12px; /* Smaller buttons */
+    padding: 5px 10px;
+  }
+
+  .tab-content {
+    margin-top: 60px; /* Ensure content is not hidden under navbar */
+  }
+
+  /* Fix for Theme Toggle Button */
+  #themeToggle {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Fix for Filter Container */
   .filter-container {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  /* Fix for Buttons */
+  button {
+    width: 100%;
+  }
+
+  /* Fix for Post Items */
+  .post-item {
+    width: 100%;
+  }
+
+  /* Fix for Marketplace Product Cards */
+  .product-card {
+    width: 100%;
+  }
+}
+
 
   button {
     width: 100%;
@@ -633,18 +693,7 @@ body.dark-mode #marketplace-list .post-item {
   background-color: #e74c3c;
 }
 
-/* 📱 Responsive Fix for Smaller Screens */
-@media screen and (max-width: 1024px) {
-  .product-card {
-    width: 45%;  /* Two cards per row on tablets */
-  }
-}
 
-@media screen and (max-width: 600px) {
-  .product-card {
-    width: 100%;  /* Full width on mobile */
-  }
-}
 
 
 /* ✅ Hidden Form (Dropdown) */

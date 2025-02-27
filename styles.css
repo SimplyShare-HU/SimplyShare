@@ -967,85 +967,7 @@ body.dark-mode .cta-button:hover {
     color: #fff;
   }
 
-  /* Hamburger Menu for Mobile */
-  .menu-icon {
-    display: block;
-    font-size: 30px;
-    cursor: pointer;
-    position: absolute;
-    right: 15px;
-    top: 15px;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    left: 0;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-}
-/* Mobile Navigation Fix */
-@media screen and (max-width: 768px) {
-  .menu-icon {
-    display: block;
-    font-size: 30px;
-    cursor: pointer;
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    background: none;
-    border: none;
-    color: white;
-  }
-
-  .nav-links {
-    display: none; /* Hide by default */
-    flex-direction: column;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    padding: 10px 0;
-    border-radius: 8px;
-  }
-
-  .nav-links.active {
-    display: flex; /* Show when clicked */
-  }
-
-  .nav-links button {
-    background: none;
-    border: none;
-    color: white;
-    padding: 12px;
-    font-size: 18px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links button:hover {
-    background: rgba(255, 255, 255, 0.2);
-  }
-}
-/* Fix Dark Mode Button Size */
-@media screen and (max-width: 768px) {
-  #themeToggle {
-    font-size: 18px;
-    padding: 8px;
-    width: auto;
-    height: auto;
-  }
-}
-/* === Responsive Navbar with Dropdown for Mobile === */
+  /* === Mobile Navbar === */
 @media screen and (max-width: 768px) {
   .menu-icon {
     display: block;
@@ -1067,7 +989,7 @@ body.dark-mode .cta-button:hover {
     z-index: 100;
   }
 
-  .nav-links.show {
+  .nav-links.active {
     display: flex; /* Show when toggled */
   }
 
@@ -1096,3 +1018,22 @@ body.dark-mode .cta-button:hover {
     padding: 8px;
   }
 }
+
+/* === Desktop: Hide Hamburger Icon === */
+@media screen and (min-width: 769px) {
+  .menu-icon {
+    display: none; /* Hide hamburger menu on desktop */
+  }
+
+  .nav-links {
+    display: flex !important; /* Ensure links are visible on desktop */
+    flex-direction: row;
+    position: relative;
+    width: auto;
+  }
+
+  .nav-links button {
+    padding: 10px 15px;
+  }
+}
+

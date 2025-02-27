@@ -885,3 +885,70 @@ body.dark-mode .cta-button {
 body.dark-mode .cta-button:hover {
   background-color: #16a085;
 }
+
+
+
+
+
+
+/* Responsive Design Fixes */
+@media screen and (max-width: 768px) {
+  /* Fix Navigation */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links button {
+    width: 100%;
+    padding: 12px;
+    text-align: left;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+  }
+
+  /* Make buttons larger for touch */
+  button {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  /* Ensure post items stack properly */
+  .post-item {
+    width: 100%;
+    min-height: auto;
+  }
+
+  /* Make form inputs responsive */
+  #shareForm input,
+  #shareForm textarea,
+  #shareForm select {
+    width: 100%;
+  }
+
+  /* Adjust the hero banner */
+  .hero-banner {
+    padding: 20px;
+    font-size: 16px;
+  }
+}

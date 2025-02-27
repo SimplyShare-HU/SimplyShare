@@ -20,9 +20,18 @@ h1, h2, h3 {
 
 /* Login Section */
 .login-section {
-  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Pushes everything to the right */
   padding: 10px;
-  background-color: #ecf0f1
+  background-color: #ecf0f1;
+  gap: 10px; /* Space between buttons */
+}
+
+.login-section button {
+  width: auto; /* Prevents buttons from stretching */
+  padding: 8px 12px;
+  font-size: 14px;
 }
 
 /* Tabs */
@@ -330,17 +339,19 @@ button.delete:hover {
 
   /* Fix for Theme Toggle Button */
 #themeToggle {
-  width: 35px;
-  height: 35px;
+  width: 40px; /* Small fixed size */
+  height: 40px;
   padding: 5px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  right: 10px; /* Keep it in the top right */
+  right: 10px;
   top: 10px;
+  min-width: unset; /* Prevents stretching */
 }
+
 
 
   /* Fix for Filter Container */
@@ -363,31 +374,31 @@ button.delete:hover {
   .product-card {
     width: 100%;
   }
-  .nav-links {
+.nav-links {
   display: flex;
-  flex-wrap: nowrap; /* Prevent buttons from wrapping */
-  overflow-x: auto; /* Enable horizontal scrolling */
-  white-space: nowrap; /* Prevent text from breaking */
+  flex-wrap: nowrap; /* Prevents line break */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  white-space: nowrap; /* Ensures buttons remain in one line */
   gap: 5px;
-  padding-bottom: 5px; /* Add space below buttons */
+  padding-bottom: 5px;
+  width: 100%; /* Ensures full width */
+  scroll-behavior: smooth; /* Smooth scrolling */
 }
 
-/* Hide scrollbar but keep scroll functionality */
+.nav-links button:first-child {
+  margin-left: 10px; /* Ensures "Home" button is not hidden */
+}
+
+/* Show full navbar scrolling */
 .nav-links::-webkit-scrollbar {
-  display: none; /* Hide scrollbar in Webkit browsers */
+  display: none; /* Hide scrollbar */
 }
 
 .nav-links {
-  -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
-  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Make buttons smaller */
-.nav-links button {
-  font-size: 12px;
-  padding: 8px 10px;
-  flex-shrink: 0; /* Prevent buttons from shrinking */
-}
 
 }
 

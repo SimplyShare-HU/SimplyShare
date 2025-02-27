@@ -68,17 +68,14 @@ const storage = firebase.storage(); // ✅ This will now work correctly
 
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
 
+  if (!menuToggle || !navLinks) return; // Prevents errors if elements are missing
+
   menuToggle.addEventListener("click", () => {
-    if (navLinks.classList.contains("show")) {
-      navLinks.classList.remove("show"); // Hide menu
-    } else {
-      navLinks.classList.add("show"); // Show menu
-    }
+    navLinks.classList.toggle("show"); // Toggle menu visibility
   });
 
   // Optional: Close menu when clicking outside
@@ -88,6 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
 
 

@@ -890,14 +890,14 @@ body.dark-mode .cta-button:hover {
 
 
 
-
 /* Hide menu button on larger screens */
 .menu-toggle {
   display: none;
 }
 
-/* Show menu button only on mobile */
+/* Mobile-specific styles */
 @media screen and (max-width: 768px) {
+  /* Show menu button only on mobile */
   .menu-toggle {
     display: block;
     background: #4a90e2;
@@ -910,9 +910,9 @@ body.dark-mode .cta-button:hover {
     text-align: center;
   }
 
-  /* Hide nav-links by default on mobile */
+  /* Hide nav-links by default */
   .nav-links {
-    display: none;
+    display: none; /* Ensure it's hidden initially */
     flex-direction: column;
     background: #4a90e2;
     padding: 10px;
@@ -922,10 +922,12 @@ body.dark-mode .cta-button:hover {
     top: 60px;
     left: 0;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
   }
 
+  /* Show nav-links when toggled */
   .nav-links.show {
-    display: flex;
+    display: flex !important; /* Force it to show */
   }
 
   .nav-links button {
@@ -937,3 +939,4 @@ body.dark-mode .cta-button:hover {
     width: 100%;
   }
 }
+

@@ -891,7 +891,7 @@ body.dark-mode .cta-button:hover {
 
 
 
-/* Hide menu button on large screens */
+/* Hide menu button on larger screens */
 .menu-toggle {
   display: none;
 }
@@ -904,7 +904,7 @@ body.dark-mode .cta-button:hover {
     color: white;
     border: none;
     font-size: 18px;
-    padding: 10px 15px;
+    padding: 10px;
     cursor: pointer;
     width: 100%;
     text-align: center;

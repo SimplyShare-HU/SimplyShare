@@ -1052,10 +1052,11 @@ body.dark-mode .cta-button:hover {
     cursor: pointer;
     font-size: 24px;
     padding: 10px;
+    color: white;
   }
 
   .nav-links {
-    display: none;
+    display: none; /* Hide menu by default */
     flex-direction: column;
     position: absolute;
     top: 60px;
@@ -1067,7 +1068,7 @@ body.dark-mode .cta-button:hover {
   }
 
   .nav-links.show {
-    display: flex;
+    display: flex; /* Show when toggled */
   }
 
   .nav-links button {
@@ -1078,6 +1079,7 @@ body.dark-mode .cta-button:hover {
     border: none;
     color: white;
     text-align: left;
+    cursor: pointer;
   }
 
   .nav-links button i {
@@ -1094,4 +1096,3 @@ body.dark-mode .cta-button:hover {
     padding: 8px;
   }
 }
-

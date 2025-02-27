@@ -992,3 +992,48 @@ body.dark-mode .cta-button:hover {
     display: flex;
   }
 }
+/* Mobile Navigation Fix */
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: none;
+    border: none;
+    color: white;
+  }
+
+  .nav-links {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px 0;
+    border-radius: 8px;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show when clicked */
+  }
+
+  .nav-links button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links button:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+

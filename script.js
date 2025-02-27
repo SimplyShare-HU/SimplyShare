@@ -482,6 +482,11 @@ auth.onAuthStateChanged((user) => {
   // 🔄 Load marketplace products after checking auth state
   refreshMarketplaceList(); // Make sure this is called AFTER the function definition
 });
+// ✅ Toggle Marketplace Form (Dropdown)
+document.getElementById("toggleMarketplaceForm").addEventListener("click", () => {
+  const formContainer = document.getElementById("marketplaceFormContainer");
+  formContainer.classList.toggle("show-form");
+});
 
 });
 

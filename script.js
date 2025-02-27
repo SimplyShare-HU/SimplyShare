@@ -74,8 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!menuToggle || !navLinks) return; // Prevents errors if elements are missing
 
+  // Toggle menu visibility
   menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show"); // Toggle menu visibility
+    navLinks.classList.toggle("show");
   });
 
   // Ensure clicking outside the menu closes it
@@ -92,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 
 
 

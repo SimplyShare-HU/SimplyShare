@@ -504,6 +504,10 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.classList.toggle("active");
   });
 });
+// Toggle mobile menu
+function toggleMenu() {
+  document.getElementById("nav-menu").classList.toggle("show");
+}
 
 });
 

@@ -890,14 +890,34 @@ body.dark-mode .cta-button:hover {
 
 
 
-/* Keep menu hidden on large screens */
+/* Default navbar layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4a90e2;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+/* Nav links default style */
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+/* Hide menu button on larger screens */
 .menu-toggle {
   display: none;
 }
 
-/* Navbar adjustments for mobile */
+/* Mobile-specific styles */
 @media screen and (max-width: 768px) {
-  /* Show the menu button */
+  /* Show the menu button only on mobile */
   .menu-toggle {
     display: block;
     background: #4a90e2;
@@ -910,12 +930,12 @@ body.dark-mode .cta-button:hover {
     text-align: center;
   }
 
-  /* Make nav-links hidden by default */
+  /* Hide the nav links by default */
   .nav-links {
     display: none;
     flex-direction: column;
     background: #4a90e2;
-    padding: 15px;
+    padding: 10px;
     width: 90%;
     text-align: center;
     position: absolute;
@@ -940,18 +960,15 @@ body.dark-mode .cta-button:hover {
     padding: 12px;
     width: 100%;
   }
-}
 
-/* Ensure tabs remain centered on larger screens */
-@media screen and (min-width: 769px) {
-  .nav-links {
-    display: flex !important;
-    justify-content: center;
-    width: auto;
+  /* Center the site content properly */
+  body {
+    text-align: center;
   }
 
-  .nav-links button {
-    margin: 0 10px;
+  .tab-content {
+    width: 90%;
+    margin: 0 auto;
   }
 }
 
@@ -967,5 +984,4 @@ body.dark-mode .cta-button:hover {
   right: 10px;
   top: 15px;
 }
-
 

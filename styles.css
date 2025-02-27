@@ -911,3 +911,13 @@ body.dark-mode .cta-button {
 body.dark-mode .cta-button:hover {
   background-color: #16a085;
 }
+@media screen and (max-width: 600px) {
+  #themeToggle {
+    width: 30px; /* Smaller size on mobile */
+    height: 30px;
+    padding: 3px;
+    right: 5px; /* Adjust positioning */
+    top: 5px;
+  }
+}
+

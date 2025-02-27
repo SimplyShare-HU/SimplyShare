@@ -65,6 +65,36 @@ const storage = firebase.storage(); // ✅ This will now work correctly
     document.getElementById(tabName).classList.add("active-tab");
   };
 
+
+
+
+
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.createElement("button");
+  menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+  menuToggle.classList.add("menu-toggle");
+
+  const navbar = document.querySelector(".navbar");
+  navbar.insertBefore(menuToggle, navbar.firstChild);
+
+  const navLinks = document.querySelector(".nav-links");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+});
+
+
+
+
+
+
+
+
+  
+
   // Login button handler
   document.getElementById("loginButton").addEventListener("click", async () => {
     const email = prompt("Enter your email:");

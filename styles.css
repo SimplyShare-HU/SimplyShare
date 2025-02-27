@@ -304,19 +304,13 @@ button.delete:hover {
 }
 @media screen and (max-width: 600px) {
   /* Fix for Sticky Navbar */
-  .navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    height: 50px; /* Reduced navbar height */
-    padding: 10px; /* Reduce padding */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
+.navbar {
+  height: 45px; /* Make navbar smaller */
+  padding: 8px 10px; /* Reduce padding */
+  flex-direction: row; /* Keep items in one row */
+  justify-content: space-between;
+}
+
 
   .nav-links {
     display: flex;
@@ -335,15 +329,19 @@ button.delete:hover {
   }
 
   /* Fix for Theme Toggle Button */
-  #themeToggle {
-    width: 35px;
-    height: 35px;
-    padding: 5px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+#themeToggle {
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 10px; /* Keep it in the top right */
+  top: 10px;
+}
+
 
   /* Fix for Filter Container */
   .filter-container {
@@ -365,6 +363,32 @@ button.delete:hover {
   .product-card {
     width: 100%;
   }
+  .nav-links {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent buttons from wrapping */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent text from breaking */
+  gap: 5px;
+  padding-bottom: 5px; /* Add space below buttons */
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.nav-links::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Webkit browsers */
+}
+
+.nav-links {
+  -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+/* Make buttons smaller */
+.nav-links button {
+  font-size: 12px;
+  padding: 8px 10px;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
 }
 
 

@@ -505,9 +505,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 // Toggle mobile menu
-function toggleMenu() {
+document.getElementById("menu-icon").addEventListener("click", function () {
   document.getElementById("nav-menu").classList.toggle("show");
-}
+});
+
 
 });
 

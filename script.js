@@ -482,33 +482,15 @@ auth.onAuthStateChanged((user) => {
   // 🔄 Load marketplace products after checking auth state
   refreshMarketplaceList(); // Make sure this is called AFTER the function definition
 });
-// ✅ Toggle Marketplace Form (Dropdown)
-document.getElementById("toggleMarketplaceForm").addEventListener("click", () => {
-  const formContainer = document.getElementById("marketplaceFormContainer");
-  formContainer.classList.toggle("show-form");
-});
-// Mobile Menu Toggle
 document.addEventListener("DOMContentLoaded", () => {
-  const menuIcon = document.querySelector(".menu-icon");
-  const navLinks = document.querySelector(".nav-links");
+  // Mobile Menu Toggle
+  const menuIcon = document.getElementById("menu-icon");
+  const navMenu = document.getElementById("nav-menu");
 
   menuIcon.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+    navMenu.classList.toggle("active");
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
-  const menuIcon = document.querySelector(".menu-icon");
-  const navLinks = document.querySelector(".nav-links");
-
-  menuIcon.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
-});
-// Toggle mobile menu
-document.getElementById("menu-icon").addEventListener("click", function () {
-  document.getElementById("nav-menu").classList.toggle("show");
-});
-
 
 });
 

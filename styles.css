@@ -417,14 +417,35 @@ button.delete:hover {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 15px;
-  margin-bottom: 20px;
+  margin: 10px;
   transition: transform 0.2s, box-shadow 0.3s;
   cursor: pointer;
-  width: calc(30% - 20px);  /* Smaller width */
+  width: calc(33.33% - 20px); /* 3 posts per row */
   display: inline-block;
   vertical-align: top;
-  margin: 10px;
-  min-height: 200px;  /* Consistent height */
+  min-height: 200px;
+  max-width: 300px;
+}
+
+/* Make sure post-list uses flexbox */
+#post-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Hover effect */
+.post-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Fix: Show Only 1 Post Per Row */
+@media screen and (max-width: 600px) {
+  .post-item {
+    width: 100%; /* Show one post per row */
+  }
 }
 
 

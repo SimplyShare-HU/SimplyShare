@@ -482,15 +482,6 @@ auth.onAuthStateChanged((user) => {
   // 🔄 Load marketplace products after checking auth state
   refreshMarketplaceList(); // Make sure this is called AFTER the function definition
 });
-document.addEventListener("DOMContentLoaded", () => {
-  // Mobile Menu Toggle
-  const menuIcon = document.getElementById("menu-icon");
-  const navMenu = document.getElementById("nav-menu");
-
-  menuIcon.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-  });
-});
 
 });
 

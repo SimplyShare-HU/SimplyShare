@@ -887,37 +887,9 @@ body.dark-mode .cta-button:hover {
 }
 
 
-
-
-
-/* Default navbar layout */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #4a90e2;
-  padding: 15px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-/* Nav links default style */
-.nav-links {
-  display: flex;
-  gap: 15px;
-}
-
-/* Hide menu button on larger screens */
-.menu-toggle {
-  display: none;
-}
-
-/* Mobile-specific styles */
+/* ✅ Mobile Navigation Fix */
 @media screen and (max-width: 768px) {
-  /* Show the menu button only on mobile */
+  /* Ensure the menu button is visible */
   .menu-toggle {
     display: block;
     background: #4a90e2;
@@ -947,7 +919,7 @@ body.dark-mode .cta-button:hover {
     border-radius: 8px;
   }
 
-  /* Show nav-links when toggled */
+  /* Show menu when toggled */
   .nav-links.show {
     display: flex !important;
   }
@@ -961,7 +933,7 @@ body.dark-mode .cta-button:hover {
     width: 100%;
   }
 
-  /* Center the site content properly */
+  /* Ensure site content is properly centered */
   body {
     text-align: center;
   }
@@ -972,16 +944,16 @@ body.dark-mode .cta-button:hover {
   }
 }
 
-/* Keep Dark Mode Button Visible */
-.theme-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 18px;
-  padding: 10px;
-  cursor: pointer;
-  position: absolute;
-  right: 10px;
-  top: 15px;
+/* ✅ Desktop Navigation Fix */
+@media screen and (min-width: 769px) {
+  .nav-links {
+    display: flex !important;
+    justify-content: center;
+    width: auto;
+  }
+
+  .nav-links button {
+    margin: 0 10px;
+  }
 }
 

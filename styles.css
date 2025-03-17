@@ -918,4 +918,13 @@ body.dark-mode .cta-button:hover {
     top: 5px;
   }
 }
+/* Ensure marketplace cards have a normal width on mobile */
+@media screen and (max-width: 600px) {
+  #marketplace-list .post-item,
+  .product-card {
+    width: 90%; /* Makes it take up more space on small screens */
+    max-width: 350px; /* Prevents it from getting too large */
+    margin: 0 auto; /* Centers it */
+  }
+}
 

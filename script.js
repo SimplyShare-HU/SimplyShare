@@ -336,18 +336,28 @@ function displayProduct(productId, product) {
   const productItem = document.createElement("div");
   productItem.classList.add("post-item");
 
-  productItem.innerHTML = `
-    <img src="${product.imageUrl}" alt="${product.productName}" 
-         class="marketplace-img"
-         onerror="this.src='fallback-image.png'">
-    <h3>${product.productName}</h3>
-    <p><strong>Price:</strong> €${product.productPrice.toFixed(2)}</p>
-  `;
+  // 🔹 Updated: Removed inline styles, using CSS class instead
+  const productImage = document.createElement("img");
+  productImage.src = product.imageUrl;
+  productImage.alt = product.productName;
+  productImage.classList.add("marketplace-img"); // Apply correct CSS
+  productImage.onerror = () => (productImage.src = "fallback-image.png");
 
-  // Make product clickable to show details
+  const productTitle = document.createElement("h3");
+  productTitle.textContent = product.productName;
+
+  const productPrice = document.createElement("p");
+  productPrice.innerHTML = `<strong>Price:</strong> €${product.productPrice.toFixed(2)}`;
+
+  // Append elements
+  productItem.appendChild(productImage);
+  productItem.appendChild(productTitle);
+  productItem.appendChild(productPrice);
+
+  // ✅ Make product clickable to show details
   productItem.addEventListener("click", () => openProductDetails(productId, product));
 
-  // Add Edit and Delete buttons for the owner or admin
+  // ✅ Add Edit and Delete buttons for the owner or admin
   if (currentUser && (product.userId === currentUser.uid || isAdmin)) {
     const editButton = document.createElement("button");
     editButton.innerHTML = '<i class="fas fa-edit"></i> Edit';
@@ -357,21 +367,12 @@ function displayProduct(productId, product) {
       editProduct(productId);
     });
 
-    const deleteButton = document.createElement("button");
-    deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i> Delete';
-    deleteButton.classList.add("delete");
-    deleteButton.addEventListener("click", async (e) => {
-      e.stopPropagation();
-      await db.collection("marketplace").doc(productId).delete();
-      refreshMarketplaceList();
-    });
-
     productItem.appendChild(editButton);
-    productItem.appendChild(deleteButton);
   }
 
   marketplaceList.appendChild(productItem);
 }
+
 
 // ✅ Open Product Details Modal with Blurred Contact Details
 function openProductDetails(productId, product) {

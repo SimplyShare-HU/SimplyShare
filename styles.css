@@ -937,4 +937,45 @@ body.dark-mode .cta-button:hover {
     margin: 0 auto; /* Centers it */
   }
 }
+/* ✅ Fix Mobile Scaling Issue */
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* ✅ Ensure Everything Fits the Screen */
+* {
+  max-width: 100%; /* Prevents elements from overflowing */
+  box-sizing: border-box; /* Keeps padding and margins inside elements */
+}
+
+/* ✅ Fix for Tabs Overflowing */
+.tabs {
+  flex-wrap: wrap; /* Allows tabs to wrap if they don’t fit */
+  overflow-x: auto; /* Enables horizontal scrolling if needed */
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+}
+
+/* ✅ Fix Marketplace Cards from Overflowing */
+#marketplace-list .post-item,
+.product-card {
+  width: 90%;
+  max-width: 350px; /* Prevents them from being too wide */
+  margin: 0 auto;
+}
+
+/* ✅ Fix Navbar for Mobile */
+.navbar {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ✅ Fix Modal Content Scaling */
+.modal-content {
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
 

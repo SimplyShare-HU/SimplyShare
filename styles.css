@@ -203,6 +203,7 @@ h1, h2, h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: auto; /* Allows scrolling if content is too long */
 }
 
 .modal-content {
@@ -211,16 +212,24 @@ h1, h2, h3 {
   border-radius: 8px;
   width: 80%;
   max-width: 500px;
+  max-height: 80vh; /* Prevents modal from getting too tall */
+  overflow-y: auto; /* Enables scrolling if needed */
   position: relative;
 }
+
 
 .close-button {
   position: absolute;
   top: 10px;
   right: 10px;
-  cursor: pointer;
   font-size: 20px;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  z-index: 10; /* Ensures it's always visible */
 }
+
 
 /* Footer */
 .site-footer {

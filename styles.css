@@ -204,6 +204,7 @@ h1, h2, h3 {
   justify-content: center;
   align-items: center;
   overflow-y: auto; /* Allows scrolling if content is too long */
+    z-index: 9999; /* Ensures it's above everything */
 }
 
 .modal-content {
@@ -362,7 +363,7 @@ button.delete:hover {
   padding: 15px 20px;
   position: sticky;
   top: 0;
-  z-index: 1000;
+   z-index: 100; /* Lower than modal */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .nav-links {

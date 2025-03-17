@@ -374,8 +374,9 @@ button.delete:hover {
   gap: 5px;
   width: 100%;
   scroll-behavior: smooth;
-  justify-content: flex-start; /* Align buttons correctly */
+  justify-content: center; /* Center align the buttons */
 }
+
 
 .nav-links button:first-child {
   margin-left: 10px; /* Ensures "Home" button is not hidden */

@@ -24,18 +24,17 @@ const storage = firebase.storage(); // ✅ This will now work correctly
   let isAdmin = false;
 
   // Monitor user authentication state
-  auth.onAuthStateChanged((user) => {
-    if (user) {
-      currentUser = user;
-      isAdmin = user.email === "admin@example.com"; // Replace with your admin email
-      updateLoginStatus();
-      refreshPostList();
-    } else {
-      currentUser = null;
-      isAdmin = false;
-      updateLoginStatus();
-    }
-  });
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    currentUser = user;
+    isAdmin = ["gomglog@gmail.com", "hugovkeulen@hotmail.com"].includes(user.email); // Fix admin check
+  } else {
+    currentUser = null;
+    isAdmin = false;
+  }
+  updateLoginStatus();
+  refreshPostList();  // ✅ Now fetching posts for everyone
+});
 
   // Update login/logout button states
   function updateLoginStatus() {
@@ -472,7 +471,7 @@ async function refreshMarketplaceList() {
 auth.onAuthStateChanged((user) => {
   if (user) {
     currentUser = user;
-    isAdmin = user.email === "admin@example.com"; // Replace with your admin email
+    isAdmin = user.email === "gomglog@gmail.com", "hugovkeulen@hotmail.com"; // Replace with your admin email
     console.log("✅ User authenticated:", user.email);
   } else {
     currentUser = null;

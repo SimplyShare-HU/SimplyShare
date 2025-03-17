@@ -338,7 +338,7 @@ function displayProduct(productId, product) {
 
   productItem.innerHTML = `
     <img src="${product.imageUrl}" alt="${product.productName}" 
-         style="width:100%; height:200px; object-fit:cover; border-radius:8px;" 
+         class="marketplace-img"
          onerror="this.src='fallback-image.png'">
     <h3>${product.productName}</h3>
     <p><strong>Price:</strong> €${product.productPrice.toFixed(2)}</p>

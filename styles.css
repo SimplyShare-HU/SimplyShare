@@ -980,16 +980,12 @@ html, body {
   overflow-y: auto;
 }
 
-/* Fix for Marketplace Card Images */
-.product-card img {
-  width: 100%; /* Ensures the image scales properly */
-  max-height: 200px; /* Limits the height */
-  object-fit: cover; /* Ensures the image covers the area without stretching */
-  border-radius: 8px; /* Optional: Rounds the corners */
-}
+/* ✅ Fix for Firebase-loaded images */
 .marketplace-img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
+  width: 100%; /* Ensures image fills the container */
+  max-height: 200px; /* Prevents oversized images */
+  object-fit: cover; /* Keeps aspect ratio while cropping if needed */
+  border-radius: 8px; /* Smooth corners */
+  display: block; /* Prevents spacing issues */
 }
+
